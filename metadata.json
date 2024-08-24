@@ -2,9 +2,10 @@
   "name": "zhituha-ocserv",
   "version": "0.1.0",
   "author": "zhituha",
-  "summary": "",
+  "summary": "Configures the OpenConnect VPN server (ocserv).",
   "license": "Apache-2.0",
-  "source": "",
+  "source": "https://github.com/zhituha/puppet-ocserv",
+  "issues_url": "https://github.com/zhituha/puppet-ocserv/issues",
   "dependencies": [
 
   ],
