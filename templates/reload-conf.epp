@@ -1,0 +1,206 @@
+isolate-workers = <%= $isolate_workers %>
+<% if $banner { %>
+banner = "<%= $banner %>"
+<% } -%>
+<% if $pre_login_banner { %>
+pre-login-banner = "<%= $pre_login_banner %>"
+<% } -%>
+max-clients = <%= $max_clients %>
+max-same-clients = <%= $max_same_clients %>
+<% if $listen_proxy_proto { %>
+listen-proxy-proto = <%= $listen_proxy_proto -%>
+<% } -%>
+rate-limit-ms = <%= $rate_limit_ms %>
+<% if $stats_report_time { %>
+stats-report-time = <%= $stats_report_time -%>
+<% } -%>
+server-stats-reset-time = <%= $server_stats_reset_time %>
+keepalive = <%= $keepalive %>
+dpd = <%= $dpd %>
+mobile-dpd = <%= $mobile_dpd %>
+switch-to-tcp-timeout = <%= $switch_to_tcp_timeout %>
+try-mtu-discovery = <%= $try_mtu_discovery %>
+auth-timeout = <%= $auth_timeout %>
+min-reauth-time = <%= $min_reauth_time %>
+max-ban-score = <%= $max_ban_score %>
+ban-reset-time = <%= $ban_reset_time %>
+cookie-timeout = <%= $cookie_timeout %>
+deny-roaming = <%= $deny_roaming %>
+rekey-time = <%= $rekey_time %>
+rekey-method = <%= $rekey_method %>
+use-occtl = <%= $use_occtl %>
+pid-file = <%= $pid_file %>
+log-level = <%= $log_level %>
+device = <%= $device %>
+predictable-ips = <%= $predictable_ips %>
+default-domain = <%= $default_domain %>
+ipv4-network = <%= $ipv4_network %>
+tunnel-all-dns = <%= $tunnel_all_dns %>
+<% $dns.each |$dns_server| { %>
+dns = <%= $dns_server -%>
+<% } %>
+ping-leases = <%= $ping_leases %>
+cisco-client-compat = <%= $cisco_client_compat %>
+dtls-legacy = <%= $dtls_legacy %>
+client-bypass-protocol = <%= $client_bypass_protocol %>
+<% if $server_drain_ms { %>
+server-drain-ms = <%= $server_drain_ms -%>
+<% } -%>
+<% if $ocsp_response { %>
+ocsp-response = <%= $ocsp_response -%>
+<% } -%>
+<% if $cert_user_oid { %>
+cert-user-oid = <%= $cert_user_oid -%>
+<% } -%>
+<% if $cert_group_oid { %>
+cert-group-oid = <%= $cert_group_oid -%>
+<% } -%>
+<% if $crl { %>
+crl = <%= $crl -%>
+<% } -%>
+<% if $compression { %>
+compression = <%= $compression -%>
+<% } -%>
+<% if $no_compress_limit { %>
+no-compress-limit = <%= $no_compress_limit -%>
+<% } -%>
+<% if $tls_priorities { %>
+tls-priorities = <%= $tls_priorities -%>
+<% } -%>
+<% if $match_tls_dtls_ciphers { %>
+match-tls-dtls-ciphers = <%= $match_tls_dtls_ciphers -%>
+<% } -%>
+<% if $idle_timeout { %>
+idle-timeout = <%= $idle_timeout -%>
+<% } -%>
+<% if $session_timeout { %>
+session-timeout = <%= $session_timeout -%>
+<% } -%>
+<% if $mobile_idle_timeout { %>
+mobile-idle-timeout = <%= $mobile_idle_timeout -%>
+<% } -%>
+<% if $ban_points_wrong_password { %>
+ban-points-wrong-password = <%= $ban_points_wrong_password -%>
+<% } -%>
+<% if $ban_points_connection { %>
+ban-points-connection = <%= $ban_points_connection -%>
+<% } -%>
+<% if $ban_points_kkdcp { %>
+ban-points-kkdcp = <%= $ban_points_kkdcp -%>
+<% } -%>
+<% if $persistent_cookies { %>
+persistent-cookies = <%= $persistent_cookies -%>
+<% } -%>
+<% if $connect_script { %>
+connect-script = <%= $connect_script -%>
+<% } -%>
+<% if $disconnect_script { %>
+disconnect-script = <%= $disconnect_script -%>
+<% } -%>
+<% if $host_update_script { %>
+host-update-script = <%= $host_update_script -%>
+<% } -%>
+<% if $use_utmp { %>
+use-utmp = <%= $use_utmp -%>
+<% } -%>
+<% if $net_priority { %>
+net-priority = <%= $net_priority -%>
+<% } -%>
+<% if $cgroup { %>
+cgroup = <%= $cgroup -%>
+<% } -%>
+<% if $ipv6_network { %>
+ipv6-network = <%= $ipv6_network -%>
+<% } -%>
+<% if $ipv6_subnet_prefix { %>
+ipv6-subnet-prefix = <%= $ipv6_subnet_prefix -%>
+<% } -%>
+<% if $nbns { %>
+nbns = <%= $nbns -%>
+<% } -%>
+<% if $split_dns { %>
+split-dns = <%= $split_dns -%>
+<% } -%>
+<% if $mtu { %>
+mtu = <%= $mtu -%>
+<% } -%>
+<% if $rx_data_per_sec { %>
+rx-data-per-sec = <%= $rx_data_per_sec -%>
+<% } -%>
+<% if $tx_data_per_sec { %>
+tx-data-per-sec = <%= $tx_data_per_sec -%>
+<% } -%>
+<% if $output_buffer { %>
+output-buffer = <%= $output_buffer -%>
+<% } -%>
+<% if $route { %>
+  <% $route.each |$rt| { %>
+route = <%= $rt -%>
+  <% } -%>
+<% } -%>
+<% if $no_route { %>
+no-route = <%= $no_route -%>
+<% } -%>
+<% if $restrict_user_to_routes { %>
+restrict-user-to-routes = <%= $restrict_user_to_routes -%>
+<% } -%>
+<% if $restrict_user_to_ports { %>
+restrict-user-to-ports = <%= $restrict_user_to_ports -%>
+<% } -%>
+<% if $expose_iroutes { %>
+expose-iroutes = <%= $expose_iroutes -%>
+<% } -%>
+<% if $select_group { %>
+  <% $select_group.each |$sel_group| { %>
+select-group = <%= $sel_group -%>
+  <% } -%>
+<% } -%>
+<% if $select_group_by_url { %>
+select-group-by-url = <%= $select_group_by_url -%>
+<% } -%>
+<% if $default_select_group { %>
+default-select-group = <%= $default_select_group -%>
+<% } -%>
+<% if $auto_select_group { %>
+auto-select-group = <%= $auto_select_group -%>
+<% } -%>
+<% if $config_per_user { %>
+config-per-user = <%= $config_per_user -%>
+<% } -%>
+<% if $config_per_group { %>
+config-per-group = <%= $config_per_group -%>
+<% } -%>
+<% if $default_user_config { %>
+default-user-config = <%= $default_user_config -%>
+<% } -%>
+<% if $default_group_config { %>
+default-group-config = <%= $default_group_config -%>
+<% } -%>
+<% if $route_add_cmd { %>
+route-add-cmd = <%= $route_add_cmd -%>
+<% } -%>
+<% if $route_del_cmd { %>
+route-del-cmd = <%= $route_del_cmd -%>
+<% } -%>
+<% if $proxy_url { %>
+proxy-url = <%= $proxy_url -%>
+<% } -%>
+<% if $kkdcp { %>
+kkdcp = <%= $kkdcp -%>
+<% } -%>
+<% if $user_profile { %>
+user-profile = <%= $user_profile -%>
+<% } -%>
+<% if $dtls_psk { %>
+dtls-psk = <%= $dtls_psk -%>
+<% } -%>
+<% if $custom_header { %>
+custom-header = <%= $custom_header -%>
+<% } -%>
+<% if $camouflage { %>
+camouflage = <%= $camouflage -%>
+<% } -%>
+<% if $camouflage_secret { %>
+camouflage-secret = <%= $camouflage_secret -%>
+<% } -%>
+

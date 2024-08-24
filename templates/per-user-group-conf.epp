@@ -1,0 +1,77 @@
+<%- if $ipv4_network { -%>
+ipv4-network = <%= $ipv4_network %>
+<%- } -%>
+<%- if $ipv4_netmask { -%>
+ipv4-netmask = <%= $ipv4_netmask %>
+<%- } -%>
+<%- if $ipv6_network { -%>
+ipv6-network = <%= $ipv6_network %>
+<%- } -%>
+<%- if $rx_data_per_sec { -%>
+rx-data-per-sec = <%= $rx_data_per_sec %>
+<%- } -%>
+<%- if $tx_data_per_sec { -%>
+tx-data-per-sec = <%= $tx_data_per_sec %>
+<%- } -%>
+<%- if $expose_iroutes { -%>
+expose-iroutes = <%= $expose_iroutes %>
+<%- } -%>
+<%- if $route { -%>
+  <%- $route.each |$rt| { -%>
+route = <%= $rt %>
+  <%- } -%>
+<%- } -%>
+<%- if $no_route { -%>
+no-route = <%= $no_route %>
+<%- } -%>
+<%- if $net_priority { -%>
+net-priority = <%= $net_priority %>
+<%- } -%>
+<%- if $deny_roaming { -%>
+deny-roaming = <%= $deny_roaming %>
+<%- } -%>
+<%- if $no_udp { -%>
+no-udp = <%= $no_udp %>
+<%- } -%>
+<%- if $keepalive { -%>
+keepalive = <%= $keepalive %>
+<%- } -%>
+<%- if $dpd { -%>
+dpd = <%= $dpd %>
+<%- } -%>
+<%- if $mobile_dpd { -%>
+mobile-dpd = <%= $mobile_dpd %>
+<%- } -%>
+<%- if $max_same_clients { -%>
+max-same-clients = <%= $max_same_clients %>
+<%- } -%>
+<%- if $tunnel_all_dns { -%>
+tunnel-all-dns = <%= $tunnel_all_dns %>
+<%- } -%>
+<%- if $restrict_user_to_routes { -%>
+restrict-user-to-routes = <%= $restrict_user_to_routes %>
+<%- } -%>
+<%- if $cgroup { -%>
+cgroup = <%= $cgroup %>
+<%- } -%>
+<%- if $stats_report_time { -%>
+stats-report-time = <%= $stats_report_time %>
+<%- } -%>
+<%- if $mtu { -%>
+mtu = <%= $mtu %>
+<%- } -%>
+<%- if $idle_timeout { -%>
+idle-timeout = <%= $idle_timeout %>
+<%- } -%>
+<%- if $mobile_idle_timeout { -%>
+mobile-idle-timeout = <%= $mobile_idle_timeout %>
+<%- } -%>
+<%- if $restrict_user_to_ports { -%>
+restrict-user-to-ports = <%= $restrict_user_to_ports %>
+<%- } -%>
+<%- if $split_dns { -%>
+split-dns = <%= $split_dns %>
+<%- } -%>
+<%- if $session_timeout { -%>
+session-timeout = <%= $session_timeout %>
+<%- } -%>
