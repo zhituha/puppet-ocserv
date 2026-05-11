@@ -1,3 +1,8 @@
+# @summary
+#   Defines per-group configuration for ocserv.
+#
+# Similar to user_config but for groups.
+
 define ocserv::group_config (
   String[1] $groupname = $name,
   String[1] $mode      = '0600',
@@ -19,7 +24,7 @@ define ocserv::group_config (
   Optional[Integer]   $max_same_clients        = undef,
   Optional[Boolean]   $tunnel_all_dns          = undef,
   Optional[Boolean]   $restrict_user_to_routes = undef,
-  Optional[String[1]] $restrict_user_to_ports  = undef
+  Optional[String[1]] $restrict_user_to_ports  = undef,
   Optional[String[1]] $cgroup                  = undef,
   Optional[Integer]   $stats_report_time       = undef,
   Optional[Integer]   $mtu                     = undef,
