@@ -1,3 +1,18 @@
+# @summary
+#   Configures the main ocserv server configuration.
+#
+#   This private class manages the main configuration files (restart_config.conf and reload_config.conf)
+#   and concatenates them into ocserv.conf.
+#
+# @param ensure
+#   State of the config files.
+#
+# @param config_file
+#   Path to the main ocserv.conf file.
+#
+# Many other parameters control various ocserv options (auth, networking, timeouts etc.).
+# See the class parameters for details.
+
 class ocserv::config (
   Enum['file', 'absent'] $ensure      = 'file',
   String[1]              $config_file = "${::ocserv::base_conf_dir}/ocserv.conf",

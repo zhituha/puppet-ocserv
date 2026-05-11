@@ -1,3 +1,48 @@
+# @summary
+#   Main class for OpenConnect Server (ocserv).
+#
+#   Installs, configures and manages the ocserv VPN server.
+#
+# @param ensure
+#   Controls the state of the ocserv installation.
+#   Valid values: `present`, `absent`, `purged`, `installed`, `latest`.
+#
+# @param package_name
+#   Name of the ocserv package.
+#
+# @param package_version
+#   Specific version of the package to install. `undef` means use the default.
+#
+# @param runas_user
+#   System user that ocserv will run as.
+#
+# @param runas_group
+#   System group that ocserv will run as.
+#
+# @param base_conf_dir
+#   Base directory for ocserv configuration files.
+#
+# @param per_user_conf_dir
+#   Directory for per-user configuration files.
+#
+# @param per_group_conf_dir
+#   Directory for per-group configuration files.
+#
+# @param configure_logrotate
+#   Whether to manage logrotate configuration for ocserv.
+#
+# @param log_dir
+#   Directory where logs are stored.
+#
+# @param log_file
+#   Main log file name.
+#
+# @example
+#   class { 'ocserv':
+#     tcp_port     => 443,
+#     ipv4_network => '10.10.10.0/24',
+#   }
+
 class ocserv (
 
   # package
@@ -45,4 +90,3 @@ class ocserv (
 
   }
 }
-
