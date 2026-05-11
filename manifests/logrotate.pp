@@ -1,3 +1,15 @@
+# @summary
+#   Manages logrotate configuration for ocserv logs.
+#
+# @param logrotate_dir
+#   Path to logrotate.d directory.
+#
+# @param logs_count
+#   How many old logs to keep.
+#
+# @param period
+#   Rotation period (daily, weekly etc.).
+
 class ocserv::logrotate (
 
   String[1]           $logrotate_dir   = '/etc/logrotate.d/',
@@ -13,9 +25,9 @@ class ocserv::logrotate (
   Boolean             $delaycompress   = true,
   Boolean             $missingok       = true,
   Boolean             $ifempty         = true,
-  Boolean             $copytruncate    = true
+  Boolean             $copytruncate    = true,
   Boolean             $create          = true,
-  Optional[String[1]] $create_mode     = undef
+  Optional[String[1]] $create_mode     = undef,
   Optional[Integer]   $size            = undef,
 
 ){
