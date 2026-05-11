@@ -1,3 +1,8 @@
+# @summary
+#   Installs the ocserv package and creates necessary directories.
+#
+#   Private class called from the main `ocserv` class.
+
 class ocserv::install {
 
   if $::ocserv::configure_logrotate {
