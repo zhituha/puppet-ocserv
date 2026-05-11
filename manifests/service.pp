@@ -1,18 +1,28 @@
+# @summary
+#   Manages the ocserv service (start/stop/reload).
+#
+# @param service_name
+#   Name of the service.
+#
+# @param ensure
+#   Desired service state.
+#
+# @param enable
+#   Enable at boot.
+
 class ocserv::service (
   String[1]                       $service_name  = 'ocserv',
   Enum[ 'running', 'stopped' ]    $ensure        = 'running',
   Enum[ 'true', 'false', 'manual',
         'mask', 'delayed' ]       $enable        = 'true',
   Boolean                         $hasrestart    = true,
-  String[1]                       $bin_name      = 'ocserv',  # CHECKME
+  String[1]                       $bin_name      = 'ocserv',
   Boolean                         $use_systemd   = true,
-  String[1]                       $provider      = if $use_systemd { 'systemd' } else { 'upstart' },  # CHECKME 
-#  String[1]                       $
+  String[1]                       $provider      = if $use_systemd { 'systemd' } else { 'upstart' },
   String[1]                       $kill_bin_path = '/usr/bin/kill',
   Optional[String[1]]             $pid_file      = undef,
 ) {
 
-  #TODO test config before restart
   if $use_systemd {
     $reload_command  = "systemctl reload ${service_name}"
     $restart_command = "systemctl restart ${service_name}"
