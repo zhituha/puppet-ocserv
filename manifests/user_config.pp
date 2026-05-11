@@ -1,3 +1,14 @@
+# @summary
+#   Defines per-user configuration for ocserv.
+#
+# @param username
+#   Username for the config file.
+#
+# @param mode
+#   File permissions.
+#
+# Other parameters are passed to the EPP template for per-user options.
+
 define ocserv::user_config (
   String[1] $username = $name,
   String[1] $mode     = '0600',
