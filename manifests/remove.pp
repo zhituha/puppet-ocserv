@@ -1,3 +1,6 @@
+# @summary
+#   Removes ocserv package and configuration when $ensure = absent/purged.
+
 class ocserv::remove {
 
   package { "$::ocserv::package_name":
